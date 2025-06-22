@@ -14,17 +14,17 @@
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
     </padding>
     <children>
-        <Label text="Mini Library Manager" alignment="CENTER">
+        <Label text="Diary Plus" alignment="CENTER">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="bookTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <TableView fx:id="diaryTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="colTitle" prefWidth="150.0" text="Title" />
-                <TableColumn fx:id="colAuthor" prefWidth="150.0" text="Author" />
-                <TableColumn fx:id="colYear" prefWidth="75.0" text="Year" />
+                <TableColumn fx:id="colDate" prefWidth="150.0" text="Date/Time" />
+                <TableColumn fx:id="colMood" prefWidth="75.0" text="Mood" />
             </columns>
             <columnResizePolicy>
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -1,27 +1,31 @@
 package com.hanry.minilibrary.ui;
 
-import com.hanry.minilibrary.model.Book;
+import java.time.LocalDateTime;
+
+import com.hanry.minilibrary.model.DiaryEntry;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class MainController {
 
     @FXML
-    private TableView<Book> bookTable;
+    private TableView<DiaryEntry> diaryTable;
 
     @FXML
-    private TableColumn<Book, Integer> colId;
+    private TableColumn<DiaryEntry, Integer> colId;
 
     @FXML
-    private TableColumn<Book, String> colTitle;
+    private TableColumn<DiaryEntry, String> colTitle;
 
     @FXML
-    private TableColumn<Book, String> colAuthor;
+    private TableColumn<DiaryEntry, LocalDateTime> colDate;
 
     @FXML
-    private TableColumn<Book, Integer> colYear;
+    private TableColumn<DiaryEntry, String> colMood;
 
     @FXML
     private Button btnLoad;
@@ -37,6 +41,10 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        // Initialization code will go here
+        // Set up cell value factories
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("timestamp"));
+        colMood.setCellValueFactory(new PropertyValueFactory<>("mood"));
     }
 } 

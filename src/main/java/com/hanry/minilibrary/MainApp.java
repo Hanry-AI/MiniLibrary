@@ -3,6 +3,8 @@ package com.hanry.minilibrary;
 import java.io.IOException;
 import java.util.Objects;
 
+import com.hanry.minilibrary.db.DBUtil;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,10 +16,13 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
+            // Initialize database
+            DBUtil.initializeDatabase();
+            
             Parent root = FXMLLoader.load(
                 Objects.requireNonNull(
                     MainApp.class.getResource("/com/hanry/minilibrary/ui/MainView.fxml")));
-            primaryStage.setTitle("Mini Library Manager");
+            primaryStage.setTitle("Diary Plus");
             primaryStage.setScene(new Scene(root, 600, 400));
             primaryStage.show();
         } catch (IOException e) {
