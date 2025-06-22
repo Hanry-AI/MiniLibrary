@@ -9,7 +9,9 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class DiaryEntry {
+public class DiaryEntry implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
+
     private final IntegerProperty id;
     private final StringProperty title;
     private final ObjectProperty<LocalDateTime> timestamp;
