@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import com.hanry.minilibrary.io.DiaryIO;
 import com.hanry.minilibrary.model.DiaryEntry;
 import com.hanry.minilibrary.xml.DiaryXML;
+import com.hanry.minilibrary.db.DiaryDAO;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -87,6 +88,16 @@ public class MainController {
         } catch (Exception ex) { 
             alertErr(ex); 
         }
+    }
+
+    @FXML private void onSaveDb() {
+        DiaryDAO.saveAll(diaryTable.getItems());
+        alert("Đã lưu vào database!");
+    }
+
+    @FXML private void onLoadDb() {
+        diaryTable.setItems(FXCollections.observableArrayList(DiaryDAO.loadAll()));
+        alert("Đã tải từ database!");
     }
 
     /* helpers */

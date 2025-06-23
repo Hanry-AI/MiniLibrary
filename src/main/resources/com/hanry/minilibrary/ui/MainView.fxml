@@ -36,6 +36,8 @@
                 <Button fx:id="btnSave" mnemonicParsing="false" text="Save Binary" onAction="#onSave" />
                 <Button fx:id="btnExport" mnemonicParsing="false" text="Export XML" onAction="#onExportXml" />
                 <Button fx:id="btnImport" mnemonicParsing="false" text="Import XML" onAction="#onImportXml" />
+                <Button text="Save DB"  fx:id="btnSaveDb"  onAction="#onSaveDb"/>
+                <Button text="Load DB"  fx:id="btnLoadDb"  onAction="#onLoadDb"/>
             </children>
         </HBox>
     </children>
